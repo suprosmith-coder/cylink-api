@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "cylink"
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/suprosmith-coder/cylink"
+Homepage = "https://github.com/suprosmith-coder/cylink-api"
 
 [tool.setuptools.packages.find]
 where = ["."]
