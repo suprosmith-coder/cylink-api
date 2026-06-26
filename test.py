@@ -1,5 +1,5 @@
 import asyncio
-from cylink import AsyncAuralis
+from cylink.auralis import AsyncAuralis
 
 CODE = """
 import requests
@@ -9,18 +9,17 @@ def fetch(url):
 """
 
 async def main():
-    client = AsyncAuralis(supabase_jwt="YOUR_SUPABASE_JWT")
-
-    print("=== Streaming tokens ===")
+    client = AsyncAuralis(api_key="cyk_db4d78889d8f7337d4c7857af864de6d08aba8cb")
+    
+    print("=== Streaming ===")
     async for token in client.stream_analyze(CODE, language="python"):
         print(token, end="", flush=True)
-
-    print("\n\n=== Structured result ===")
+    
+    print("\n\n=== Full result ===")
     result = await client.analyze(CODE, language="python")
-    print("Safety tier:", result.safety_tier)
+    print("Safety:", result.safety_tier)
     print("Confidence:", result.confidence)
     for risk in result.risks:
-        print(f"  [{risk.severity}] {risk.label} — {risk.description}")
-    print("Suggestion:\n", result.suggestion)
+        print(f"  [{risk.severity}] {risk.label}")
 
 asyncio.run(main())
