@@ -20,10 +20,10 @@ class Cylink:
             "messages": [{"role": "user", "content": message}],
         })
         try:
-            content = data["choices"][0]["message"]["content"]
+            content = data["response"]
         except Exception:
             raise CylinkAPIError("Malformed response from Cylink API")
-        return ChatResponse(content=content, raw=data, model=model)
+        return ChatResponse(content=content, raw=data, model=data.get("model", model))
 
     def ari(self, query: str):
         return self._request("POST", "ari", {"query": query})

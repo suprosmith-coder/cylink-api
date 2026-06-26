@@ -1,7 +1,12 @@
+import re
 import httpx
 from .cylink_models import ChatResponse
 from .exceptions import APIError, AuthenticationError
 from .errors import CylinkAPIError
+
+
+def _strip_think(text: str) -> str:
+    return re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
 
 
 class AsyncCylink:
@@ -36,10 +41,10 @@ class AsyncCylink:
             "messages": [{"role": "user", "content": message}],
         })
         try:
-            content = data["choices"][0]["message"]["content"]
-        except Exception:
+            content = _strip_think(data["response"])
+        except KeyError:
             raise CylinkAPIError("Malformed response from Cylink API")
-        return ChatResponse(content=content, raw=data, model=model)
+        return ChatResponse(content=content, raw=data, model=data.get("model", model))
 
     async def ari(self, query: str):
         return await self._request("POST", "ari", {"query": query})
