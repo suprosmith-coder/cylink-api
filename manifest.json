@@ -1,0 +1,96 @@
+{
+  "name": "Devit — The Developer Network",
+  "short_name": "Devit",
+  "description": "The social platform built for developers. Share code, ship projects, and connect with the builder community.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "lang": "en",
+  "categories": ["social", "developer", "productivity"],
+
+  "icons": [
+    {
+      "src": "manifest/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "manifest/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "manifest/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "manifest/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "manifest/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "manifest/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+  "screenshots": [],
+
+  "shortcuts": [
+    {
+      "name": "New Post",
+      "short_name": "Post",
+      "description": "Share code, a project update, or a dev thought",
+      "url": "./?action=new-post",
+      "icons": [{ "src": "manifest/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Notifications",
+      "short_name": "Alerts",
+      "description": "See your latest likes, mentions, and follows",
+      "url": "./?view=notifications",
+      "icons": [{ "src": "manifest/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Messages",
+      "short_name": "DMs",
+      "description": "Open direct messages",
+      "url": "./?view=messages",
+      "icons": [{ "src": "manifest/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Snippets",
+      "short_name": "Snippets",
+      "description": "Watch short-form code videos",
+      "url": "./?view=snippets",
+      "icons": [{ "src": "manifest/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+
+  "related_applications": [],
+  "prefer_related_applications": false
+}

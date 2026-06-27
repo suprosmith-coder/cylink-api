@@ -150,7 +150,7 @@ class AsyncAuralis:
         messages: list,
         model: str = "llama-3.3-70b-versatile",
     ) -> AsyncIterator[str]:
-        """Stream chat tokens from Auralis chat mode."""
+        """Stream chat tokens from Auralis Studio mode."""
         payload = {"mode": "chat", "messages": messages, "model": model}
         async for event in self._stream_sse(payload):
             if "error" in event:
